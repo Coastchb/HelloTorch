@@ -1,0 +1,9 @@
+1、 libtorch/include/aten/aten.h:4:2: error: #error c++17 or later compatible compiler is required to use aten.
+cmake的时候输出：
+-- Check for working CXX compiler: /usr/bin/c++
+说明使用的是/usr/bin/c++
+
+系统有c++更高版本，所以用它替换/usr/bin/c++
+
+2、升级gcc
+https://blog.csdn.net/skybboy/article/details/105151142
