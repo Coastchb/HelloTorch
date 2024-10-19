@@ -1,0 +1,14 @@
+coqpit>=0.0.16
+trainer
+librosa
+mutagen
+anyascii
+inflect
+bangla
+bnnumerizer
+bnunicodenormalizer
+gruut
+jamo
+jieba
+pypinyin
+pysbd
