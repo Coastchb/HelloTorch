@@ -14,7 +14,7 @@ from TTS.utils.audio.numpy_transforms import save_wav
 
 
 onnx_model_path = Path('../models/coqui_vits.xml')
-input_text = 'Oh, baby, you are so sexy, I love it!'
+input_text = 'No, so being able to, like, get in different positions for you, Like, specifically doggie, Mmm, I fuck myself.'
 
 # convert text to sequence of token IDs
 config_file_path = '../configs/config.json'
@@ -38,11 +38,7 @@ scale = torch.FloatTensor([0.667, 1, 1.0])
 model_outputs = compiled_model({
     "input": np.expand_dims(input_tokens, 0),
     "input_lengths": [len(input_tokens)],
-    "scales": np.array(
-            [0.667, 1, 1.0],
-            dtype=np.float32,
-        )
-        })[output_layer]
+    "scales": scale})[output_layer]
 print('model_output:', model_outputs)
 print('model_outputs.shape:', model_outputs.shape)
 

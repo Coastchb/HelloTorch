@@ -2,3 +2,8 @@ TTS/
 launch/libtorch/
 launch/build
 launch/python/models/
+openvino/
+.vscode
+c_cpp_properties.json
+/**/*.wav
+/*/**.wav
