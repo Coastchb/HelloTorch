@@ -7,3 +7,4 @@ openvino/
 c_cpp_properties.json
 /**/*.wav
 /*/**.wav
+launch/models/
