@@ -11,7 +11,7 @@ from TTS.tts.models.vits import Vits
 from TTS.config import load_config
 #import torch
 
-config_file_path = '../configs/config.json'
+config_file_path = '../models/config.json'
 onnx_model_path = Path('../models/coqui_vits.onnx')
 ir_model_path = onnx_model_path.with_suffix('.xml')
 

@@ -17,7 +17,7 @@ onnx_model_path = Path('../models/coqui_vits.xml')
 input_text = 'No, so being able to, like, get in different positions for you, Like, specifically doggie, Mmm, I fuck myself.'
 
 # convert text to sequence of token IDs
-config_file_path = '../configs/config.json'
+config_file_path = '../models/config.json'
 config = load_config(config_file_path)
 vits_model = Vits.init_from_config(config)
 input_tokens = np.asarray(
@@ -35,10 +35,12 @@ output_layer = compiled_model.output(0)
 
 start = time.time()
 scale = torch.FloatTensor([0.667, 1, 1.0])
+# sid is valid only if it is multi-speaker model
 model_outputs = compiled_model({
     "input": np.expand_dims(input_tokens, 0),
     "input_lengths": [len(input_tokens)],
-    "scales": scale})[output_layer]
+    "scales": scale,
+    "sid": torch.tensor([94])})[output_layer]
 print('model_output:', model_outputs)
 print('model_outputs.shape:', model_outputs.shape)
 
