@@ -2,6 +2,7 @@
 // SPDX-License-Identifier: Apache-2.0
 //
 
+
 #include <iterator>
 #include <memory>
 #include <sstream>
@@ -16,13 +17,14 @@
 /**
  * @brief Main with support Unicode paths, wide strings
  */
-int tmain(int argc, char* argv[]) {
+int main(int argc, char* argv[]) {
     try {
         // -------- Get OpenVINO runtime version --------
         std::cout << ov::get_openvino_version() << std::endl;
-
+        
+        
         // -------- Parsing and validation of input arguments --------
-        if (argc != 4) {
+        if (argc != 2) {
             std::cout << "Usage : " << argv[0] << " <path_to_model>"
                        << std::endl;
             return EXIT_FAILURE;
@@ -32,33 +34,50 @@ int tmain(int argc, char* argv[]) {
         const std::string model_path = argv[1];
 
         // -------- Step 1. Initialize OpenVINO Runtime Core --------
+        //ov::Core core = ov::Core("/data/coastcao/openvino_2024.4.0/runtime/lib/intel64/pkgconfig/openvino.pc");
+        //ov::Core core = ov::Core("/data/coastcao/openvino_2024.4.0/runtime/lib/intel64/pkgconfig/openvino.pc");
+        // const std::string config_path = "/data/coastcao/openvino_2024.4.0/runtime/lib/intel64/pkgconfig/openvino.pc";
         ov::Core core;
+
 
         // -------- Step 2. Read a model --------
         std::cout << "Loading model files: " << model_path << std::endl;
         std::shared_ptr<ov::Model> model = core.read_model(model_path);
         //printInputAndOutputsInfo(*model);
+        std::cout << "load model successfully!" << std::endl;
 
-        OPENVINO_ASSERT(model->inputs().size() == 3, "Sample supports models with 3 input only");
-        OPENVINO_ASSERT(model->outputs().size() == 1, "Sample supports models with 1 output only");
+        //OPENVINO_ASSERT(model->inputs().size() == 3, "Sample supports models with 3 input only");
+        //OPENVINO_ASSERT(model->outputs().size() == 1, "Sample supports models with 1 output only");
 
         // -------- Step 3. Set up input
-
+        /*
         std::vector text_inputs = {178, 156, 178,  57, 178, 135, 178,   3, 178,  16, 178,  44, 178, 156,
         178,  47, 178, 102, 178,  44, 178,  51, 178,   3, 178,  16, 178,  52,
         178,  63, 178, 158, 178,  16, 178,  69, 178, 158, 178, 123, 178,  16,
         178,  61, 178, 157, 178,  57, 178, 135, 178,  16, 178,  61, 178, 156,
         178,  86, 178,  53, 178,  61, 178,  51, 178,   3, 178,  16, 178,  43,
         178, 102, 178,  16, 178,  54, 178, 156, 178, 138, 178,  64, 178,  16,
-        178, 102, 178,  62, 178,   5, 178};
+        178, 102, 178,  62, 178,   5, 178};*/
+        
 
+        ov::CompiledModel compiled_model = core.compile_model(model);
+
+        ov::InferRequest infer_request = compiled_model.create_infer_request();
+
+        ov::Tensor input_tensor = infer_request.get_input_tensor(0);
+        ov::Shape tensor_shape = input_tensor.get_shape();
+        std::cout << tensor_shape << std::endl;
+
+
+        /*
         ov::element::Type input_type = ov::element::u8;
         ov::Shape input_shape = {1, 1, text_inputs.size()};
         std::shared_ptr<unsigned char> input_data = text_inputs;
 
         // just wrap image data by ov::Tensor without allocating of new memory
-        ov::Tensor input_tensor = ov::Tensor(input_type, input_shape, input_data.get());
+        ov::Tensor input_tensor = ov::Tensor(input_type, input_shape, input_data.get());*/
 
+        /*
         //const ov::Layout tensor_layout{"NHWC"};
 
         // -------- Step 4. Configure preprocessing --------
@@ -98,7 +117,7 @@ int tmain(int argc, char* argv[]) {
 
         // -------- Step 9. Process output
         const ov::Tensor& output_tensor = infer_request.get_output_tensor();
-
+        */
 
 
         // -----------------------------------------------------------------------------------------------------
