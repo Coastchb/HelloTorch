@@ -7,13 +7,13 @@ set(OpenVINO_LIBs
         #"/root/coastcao/openvino_2024.4.0/runtime/lib/intel64/libopenvino_intel_cpu_plugin.so"
         #"/root/coastcao/openvino_2024.4.0/runtime/lib/intel64/libopenvino_onnx_frontend.so"
         #"/root/coastcao/openvino_2024.4.0/runtime/lib/intel64/libopenvino_tensorflow_frontend.so"
-        "/opt/intel/openvino_2024/runtime/lib/intel64/libopenvino.so"
+        "/opt/intel/openvino_2024/runtime/lib/intel64/Release/libopenvino.dylib"
     )
 
 #set(openvino_lib_dir "/root/coastcao/openvino_2024.4.0/runtime/lib/intel64/")
 #file(GLOB OpenVINO_LIBs "${openvino_lib_dir}/*.so")
 
-set(TDD_LIBs "/data/coastcao/oneTBB/build/gnu_12.3_cxx11_64_relwithdebinfo/libtbb.so")
+#set(TDD_LIBs "/data/coastcao/oneTBB/build/gnu_12.3_cxx11_64_relwithdebinfo/libtbb.so")
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
 #set(CMAKE_CXX_COMPILER "/usr/bin/gcc")
 include_directories(
