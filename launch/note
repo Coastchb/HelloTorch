@@ -7,3 +7,12 @@ cmake的时候输出：
 
 2、升级gcc
 https://blog.csdn.net/skybboy/article/details/105151142
+
+
+3、在cpp/openvino/build里make的时候报错：
+（1）undefined reference to `dladdr@GLIBC_2.34`
+  https://blog.csdn.net/eric_dma/article/details/142636368
+  没有直接解决升级glibc
+  而是升级cmake到3.30.5版本，这样glibc自动升级到2.38
+  源码安装cmake 3.30
+    https://www.baidu.com/s?wd=centos%20%E5%8D%87%E7%BA%A7cmake%E5%88%B03.30&rsv_spt=1&rsv_iqid=0x946e69a600a759cd&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_enter=0&rsv_dl=tb&oq=centos%2520%25E5%258D%2587%25E7%25BA%25A7cmake%25E5%2588%25B0%2526lt%253B.28&rsv_btype=t&inputT=711&rsv_t=29896kPUiEzZ0oU8pu24Z8RD1AkebkJdatPcuiNdWxDsOMoerB38HED0EwIy76bAeaMM&rsv_pq=8e37cfa7005fe6b9&rsv_sug3=31&rsv_sug1=20&rsv_sug7=100&rsv_sug2=0&rsv_sug4=1012
