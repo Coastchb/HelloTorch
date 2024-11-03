@@ -1,41 +1,80 @@
-import torch
-import os
-import time
+import openvino as ov
+from pathlib import Path
+import numpy as np
 import sys
+from typing import List
+import torch
+import time
 
 sys.path.append('/root/coastcao/HelloTorch/TTS')
-os.environ['KMP_DUPLICATE_LIB_OK']='True'
-from TTS.api import TTS
-os.environ['TTS_HOME'] = os.curdir
-
-# Example voice cloning with YourTTS in English, French and Portuguese
-#tts = TTS(model_name="tts_models/multilingual/multi-dataset/your_tts", progress_bar=False).to('cpu')
-#tts.tts_to_file("This is voice cloning.", speaker_wav="~/Downloads/LJ001-0001_16k.wav", language="en", file_path="output.wav")
+from TTS.tts.utils.text.cleaners import basic_cleaners
+from TTS.tts.models.vits import Vits
+from TTS.config import load_config
+from TTS.utils.audio.numpy_transforms import save_wav
 
 
-# Init TTS with the target model name
-tts = TTS(model_name="tts_models/en/vctk/vits", progress_bar=False).to('cpu')
+onnx_model_path = Path('../models/coqui_vits.xml')
+input_text = 'No, so being able to, like, get in different positions for you, Like, specifically doggie, Mmm, I fuck myself.'
+#input_text = 'No, so being able to'
 
-# Run TTS
-#tts.tts_to_file(speed=1.0, text="Good night, baby, do you miss me, keep going, keep going, baby, it makes me feel so good, fuck", file_path='output_wavs/vits/vits_output_0.wav')
-#tts.tts_to_file(speed=0.5, text="Good night, baby, do you miss me, keep going, keep going, baby, it makes me feel so good, fuck", file_path='output_wavs/vits/vits_output_1.wav')
-#tts.tts_to_file(text="Here's the dill, sweet boy,We both really wanna suck your cock", file_path='output_wavs/vits/vits_output_2.wav')
-#tts.tts_to_file(text="No, so being able to, like, get in different positions for you,Like, specifically doggie, Mmm, I fuck myself.", file_path='output_wavs/vits/vits_output_3.wav')
-tts.tts_to_file(text="Oh, baby, you are so sexy, I love it!", file_path='output_wavs/vits/vits_output_4.wav')
-# bad case
-#tts.tts_to_file(text="Fuck, Fuck, I love your body, baby. Do you love me?", file_path='output_wavs/vits/vits_output_5.wav')
-#tts.tts_to_file(text="Oh, fuck, I love your body, baby. Do you love me?", file_path='output_wavs/vits/vits_output_5.wav')
-#tts.tts_to_file(text="If eligible, you can receive a share of ads revenue just by posting on X. You must be subscribed to X Premium.", file_path="output_wavs/vits/vits_output_6.wav")
+# convert text to sequence of token IDs
+config_file_path = '../models/config.json'
+config = load_config(config_file_path)
+vits_model = Vits.init_from_config(config)
+input_tokens = np.asarray(
+    vits_model.tokenizer.text_to_ids(input_text),
+    dtype=np.int32,
+)
+print('input_tokens:', input_tokens)
+print('len:', len(input_tokens))
+# infer
+core = ov.Core()
+model = core.read_model(model=onnx_model_path)
+compiled_model = core.compile_model(model=model)
+
+output_layer = compiled_model.output(0)
+
+start = time.time()
+scale = torch.FloatTensor([0.667, 1.0, 1.0])
+print(np.expand_dims(input_tokens, 0).shape)
+print([len(input_tokens)])
+print(scale)
+# sid is valid only if it is multi-speaker model
+model_outputs = compiled_model({
+    "input": np.expand_dims(input_tokens, 0),
+    "input_lengths": [len(input_tokens)],
+    "scales": scale,
+    "sid": torch.tensor([94])})[output_layer]
+print('model_output:', model_outputs)
+print('model_outputs.shape:', model_outputs.shape)
 
 
-# Run TTS and VC
-#t0=time.time()
-#tts.tts_with_vc_to_file(
-#    "No, so being able to, like, get in different positions for you, Like, specifically doggie, Mmm, I fuck myself.",
-    #"No. so being able to, like, get in different positions for you.",
-#    speaker_wav="ref_wav/coast.wav",
-#    file_path="output_wavs/vits/vits_vc_0.wav"
-#)
-#t1=time.time()
-#print('vc consumed:', t1 - t0, 's')
+wav = None
+def inv_spectrogram(postnet_output, ap, CONFIG):
+    if CONFIG.model.lower() in ["tacotron"]:
+        wav = ap.inv_spectrogram(postnet_output.T)
+    else:
+        wav = ap.inv_melspectrogram(postnet_output.T)
+    return wav
+def save_wav_to_file(wav: List[int], path: str, pipe_out=None) -> None:
+    """Save the waveform as a file.
 
+    Args:
+        wav (List[int]): waveform as a list of values.
+        path (str): output path to save the waveform.
+        pipe_out (BytesIO, optional): Flag to stdout the generated TTS wav file for shell pipe.
+    """
+    # if tensor convert to numpy
+    if torch.is_tensor(wav):
+        wav = wav.cpu().numpy()
+    if isinstance(wav, list):
+        wav = np.array(wav)
+    save_wav(wav=wav, path=path, sample_rate=22050, pipe_out=pipe_out)
+model_outputs = model_outputs.squeeze()
+print('model_outputs:', model_outputs)
+print('model_outputs.shape:', model_outputs.shape)
+wav = model_outputs
+save_wav_to_file(wav=wav, path='output.wav')
+
+end = time.time()
+print('consumed:', end - start)

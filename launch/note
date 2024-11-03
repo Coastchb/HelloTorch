@@ -16,3 +16,27 @@ https://blog.csdn.net/skybboy/article/details/105151142
   而是升级cmake到3.30.5版本，这样glibc自动升级到2.38
   源码安装cmake 3.30
     https://www.baidu.com/s?wd=centos%20%E5%8D%87%E7%BA%A7cmake%E5%88%B03.30&rsv_spt=1&rsv_iqid=0x946e69a600a759cd&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_enter=0&rsv_dl=tb&oq=centos%2520%25E5%258D%2587%25E7%25BA%25A7cmake%25E5%2588%25B0%2526lt%253B.28&rsv_btype=t&inputT=711&rsv_t=29896kPUiEzZ0oU8pu24Z8RD1AkebkJdatPcuiNdWxDsOMoerB38HED0EwIy76bAeaMM&rsv_pq=8e37cfa7005fe6b9&rsv_sug3=31&rsv_sug1=20&rsv_sug7=100&rsv_sug2=0&rsv_sug4=1012
+
+
+4、运行环境：
+ TBB: libtbb.so.12.14  (github cimmit id: 948f0bbd)
+ cmake: cmake version 3.30.5
+ gcc/g++: gcc (Tencent Compiler 12.3.1.1) 12.3.1 20230912 (TencentOS 12.3.1.1-1)
+ glibc: ldd (GNU libc) 2.38
+
+5、OpenVINO install instruction: https://docs.openvino.ai/2024/get-started/install-openvino/install-openvino-archive-linux.html 
+
+6、源码安装espeak
+  make的时候报错：
+  （1）tr_languages.cpp:201:39: error: narrowing conversion of ‘194’ from ‘int’ to ‘signed char’ [-Wnarrowing]
+    char 改成 unsigned char ：  https://www.cnblogs.com/429512065qhq/p/14809997.html
+   (2)tr_languages.cpp:761:61: error: invalid conversion from ‘const unsigned char*’ to ‘const char*’ [-fpermissive]
+    761行：tr->langopts.roman_suffix = reinterpret_cast<const char*>(string_ordinal);
+  （3）/usr/bin/ld: cannot find -lportaudio: No such file or directory
+    源码安装portaudio 如(1)中链接
+  （4）undefined reference to `Pa_StreamActive`
+    如（1）中链接
+  （5）运行espeak命令报错：./espeak: error while loading shared libraries: libespeak.so.1: cannot open shared object file: No such file or directory
+     将libespeak.so.1所在目录加入到LD_LIBRARY_PATH 或者如(1)中链接解法
+
+7、安装libsndfile: sudo yum install libsndfile-devel

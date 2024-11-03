@@ -9,7 +9,9 @@ set(OpenVINO_LIBs
         #"/root/coastcao/openvino_2024.4.0/runtime/lib/intel64/libopenvino_tensorflow_frontend.so"
         "/opt/intel/openvino_2024/runtime/lib/intel64/libopenvino.so"
     )
-
+set(ESpeak_LIBs 
+    "/data/coastcao/tools/espeak-1.48.04-source/src/libespeak.so"
+    )
 #set(openvino_lib_dir "/root/coastcao/openvino_2024.4.0/runtime/lib/intel64/")
 #file(GLOB OpenVINO_LIBs "${openvino_lib_dir}/*.so")
 
@@ -21,6 +23,8 @@ include_directories(
     /opt/intel/openvino_2024/runtime/include/
     /opt/intel/openvino_2024/samples/cpp/common/utils/include
     /opt/intel/openvino_2024/samples/cpp/common/format_reader/include
+    /data/coastcao/tools/espeak-1.48.04-source/src
+    /data/coastcao/tools/boost_1_86_0
 )
 add_executable(infer infer.cpp )
-target_link_libraries(infer ${TDD_LIBs} ${OpenVINO_LIBs})
+target_link_libraries(infer ${TDD_LIBs} ${OpenVINO_LIBs} ${ESpeak_LIBs} -lsndfile)

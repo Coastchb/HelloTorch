@@ -15,6 +15,7 @@ from TTS.utils.audio.numpy_transforms import save_wav
 
 onnx_model_path = Path('../models/coqui_vits.xml')
 input_text = 'No, so being able to, like, get in different positions for you, Like, specifically doggie, Mmm, I fuck myself.'
+#input_text = 'No, so being able to'
 
 # convert text to sequence of token IDs
 config_file_path = '../models/config.json'
@@ -34,7 +35,10 @@ compiled_model = core.compile_model(model=model)
 output_layer = compiled_model.output(0)
 
 start = time.time()
-scale = torch.FloatTensor([0.667, 1, 1.0])
+scale = torch.FloatTensor([0.667, 1.0, 1.0])
+print(np.expand_dims(input_tokens, 0).shape)
+print([len(input_tokens)])
+print(scale)
 # sid is valid only if it is multi-speaker model
 model_outputs = compiled_model({
     "input": np.expand_dims(input_tokens, 0),
@@ -67,6 +71,7 @@ def save_wav_to_file(wav: List[int], path: str, pipe_out=None) -> None:
         wav = np.array(wav)
     save_wav(wav=wav, path=path, sample_rate=22050, pipe_out=pipe_out)
 model_outputs = model_outputs.squeeze()
+print('model_outputs:', model_outputs)
 print('model_outputs.shape:', model_outputs.shape)
 wav = model_outputs
 save_wav_to_file(wav=wav, path='output.wav')
