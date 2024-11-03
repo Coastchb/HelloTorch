@@ -12,13 +12,16 @@ from TTS.config import load_config
 #import torch
 
 config_file_path = '../models/config.json'
+input_model_path = '../models/best_model.pth'
+
+# output config
 onnx_model_path = Path('../models/coqui_vits.onnx')
 ir_model_path = onnx_model_path.with_suffix('.xml')
 
 # convert PyTorch model to ONNX model
 config = load_config(config_file_path)
 vits_model = Vits.init_from_config(config)
-vits_model.load_checkpoint(config=None, checkpoint_path='../models/best_model.pth')
+vits_model.load_checkpoint(config=None, checkpoint_path=input_model_path)
 print('loaded checkpoint')
 vits_model.export_onnx(onnx_model_path)
 
