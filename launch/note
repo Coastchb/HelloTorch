@@ -40,3 +40,14 @@ https://blog.csdn.net/skybboy/article/details/105151142
      将libespeak.so.1所在目录加入到LD_LIBRARY_PATH 或者如(1)中链接解法
 
 7、安装libsndfile: sudo yum install libsndfile-devel
+
+8、使用httplib时提示：
+  fatal error: openssl/err.h: No such file or directory
+  fatal error: brotli/decode.h: No such file or directory
+  安装openssl和brotli：yum install openssl-devel brotli-devel
+
+9、curl访问httpserver：curl -o a.wav -s -w "%{http_code}" http://localhost:1234/get-content
+   python中类似： 
+      import os
+      status = os.popen('curl -o a.wav -s -w "%{http_code}" http://localhost:1234/get-content').readlines()[0]
+      print('status:', status)
