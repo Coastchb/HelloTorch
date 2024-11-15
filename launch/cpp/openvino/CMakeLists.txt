@@ -28,11 +28,12 @@ include_directories(
     /opt/intel/openvino_2024/samples/cpp/common/format_reader/include
     /data/coastcao/tools/espeak-1.48.04-source/src
     /data/coastcao/tools/boost_1_86_0
-    /data/coastcao/HelloTorch/launch/cpp/openvino/third-party/httplib
+    #/data/coastcao/HelloTorch/launch/cpp/openvino/third-party/httplib
+    /data/coastcao/cinatra/include
 )
 #add_executable(infer infer.cpp )
 #target_link_libraries(infer ${TDD_LIBs} ${OpenVINO_LIBs} ${ESpeak_LIBs} -lsndfile -lssl -lcrypto)
 
-add_executable(infer_v1 infer_v1.cpp )
-target_link_libraries(infer_v1 ${TDD_LIBs} ${OpenVINO_LIBs} ${ESpeak_LIBs} -lsndfile -lssl -lcrypto)
+add_executable(infer_v2 infer_v2.cpp)
+target_link_libraries(infer_v2 ${TDD_LIBs} ${OpenVINO_LIBs} ${ESpeak_LIBs} -lsndfile -lssl -lcrypto)
 
