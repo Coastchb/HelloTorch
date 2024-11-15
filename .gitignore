@@ -8,5 +8,5 @@ c_cpp_properties.json
 /**/*.wav
 /*/**.wav
 launch/models/
-/**/.*/**/*/build
+/**/*/build
 launch/cpp/espeak/build/
