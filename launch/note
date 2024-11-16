@@ -1,3 +1,5 @@
+0、模型转换的时候一定要使用修改后的TTS仓库：https://github.com/Coastchb/TTS/tree/master
+
 1、 libtorch/include/aten/aten.h:4:2: error: #error c++17 or later compatible compiler is required to use aten.
 cmake的时候输出：
 -- Check for working CXX compiler: /usr/bin/c++
