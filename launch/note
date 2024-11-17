@@ -53,3 +53,8 @@ https://blog.csdn.net/skybboy/article/details/105151142
       import os
       status = os.popen('curl -o a.wav -s -w "%{http_code}" http://localhost:1234/get-content').readlines()[0]
       print('status:', status)
+
+10、报错：Can't read data file: '/espeak-data/phontab'
+          Failed to load espeak-data
+    解法：export HOME=/root/coastcao/tools/tmp/espeak-1.48.04-source/
+        phontab文件在/root/coastcao/tools/tmp/espeak-1.48.04-source/espeak-data下
