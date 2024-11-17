@@ -152,7 +152,7 @@ void tts(std::map<std::string, int>& char2id, ov::CompiledModel& model,
             const std::string* s_ptr = &s;
             //std::cout << "processing:" << *s_ptr << std::endl;
             std::string output = "";
-            espeak_Text2Phonemes((const void**)&s_ptr, 1, 19, &output);
+            espeak_Text2Phonemes((const void**)&s_ptr, &output);
             if ((s[0] != ' ') && (output[0] == ' ')) {
                 output = output.substr(1,output.size()-1);
             }

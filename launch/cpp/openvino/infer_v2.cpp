@@ -52,13 +52,13 @@ async_simple::coro::Lazy<void> tts_http_server(std::map<std::string, int>& char2
 
         // in curl, query value cannot contains white space, use '%20' instead.
         replaceAll(input, "%20", " ");
-        std::cout << "input:" << input << std::endl; 
+        //std::cout << "input:" << input << std::endl; 
 
         std::string now = std::to_string(static_cast<int>(time(0)));
         int input_number = 0;
         get_random_number(input, input_number);
         std::string wav_filename = now.append("_").append(std::to_string(input_number)).append(".wav");
-
+        //std::string wav_filename = "../output.wav";
         status_type tts_ret_status;
         tts(char2id, model, input, wav_filename, tts_ret_status);
 
@@ -115,6 +115,7 @@ int main(int argc, char* argv[]) {
     try {
         model = core.read_model(model_path);
         compiled_model = core.compile_model(model);
+        espeak_init();
     } catch (const std::exception& ex) {
         std::cerr << "Failed to init TTS model!\n";
         std::cerr << ex.what() << std::endl;
