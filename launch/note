@@ -58,3 +58,13 @@ https://blog.csdn.net/skybboy/article/details/105151142
           Failed to load espeak-data
     解法：export HOME=/root/coastcao/tools/tmp/espeak-1.48.04-source/
         phontab文件在/root/coastcao/tools/tmp/espeak-1.48.04-source/espeak-data下
+
+11、fatal error: #include <sndfile.hh>
+   解法：源码安装sndfile:
+        wget http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.28.tar.gz
+        tar -xzf libsndfile-1.0.28.tar.gz
+        cd libsndfile-1.0.28 
+
+12、跟AWS ec2服务器进行文件传输:
+    (本地运行，从ec服务器下载文件)scp -i key ec2-user@DNS:/path/to/ec2/file /local/dire
+    (本地运行，上传文件到ec服务器)scp -i key /path/to/local/file ec2-user@DNS:/ec2/dire
