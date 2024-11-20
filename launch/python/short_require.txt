@@ -1,4 +1,4 @@
-coqpit>=0.0.16
+#coqpit>=0.0.16
 trainer
 librosa
 mutagen
@@ -12,3 +12,8 @@ jamo
 jieba
 pypinyin
 pysbd
+openvino
+torchaudio
+PYYaml
+pandas
+matplotlib

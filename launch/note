@@ -21,6 +21,7 @@ https://blog.csdn.net/skybboy/article/details/105151142
 
 
 4、运行环境：
+ Python 3.10.13  (可用miniconda安装: Miniconda3-py310_23.11.0-2-Linux-x86_64.sh)
  TBB: libtbb.so.12.14  (github cimmit id: 948f0bbd)
  cmake: cmake version 3.30.5
  gcc/g++: gcc (Tencent Compiler 12.3.1.1) 12.3.1 20230912 (TencentOS 12.3.1.1-1)
@@ -68,3 +69,6 @@ https://blog.csdn.net/skybboy/article/details/105151142
 12、跟AWS ec2服务器进行文件传输:
     (本地运行，从ec服务器下载文件)scp -i key ec2-user@DNS:/path/to/ec2/file /local/dire
     (本地运行，上传文件到ec服务器)scp -i key /path/to/local/file ec2-user@DNS:/ec2/dire
+
+13、linux系统上安装任意版本python：
+    https://www.baidu.com/s?wd=ubuntu%20python%E9%99%8D%E7%89%88%E6%9C%AC&rsv_spt=1&rsv_iqid=0xc5993c2f00044585&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_dl=tb&rsv_enter=1&oq=No%2520matching%2520distribution%2520found%2520for%2520yaml&rsv_btype=t&inputT=41186&rsv_t=766cx1mCaCmsijl9o177uS7SIogyf%2BU3WA5Gsw5ZM5n%2FjHbUAtJDu%2B%2BtmVgmWgiaFUJA&rsv_pq=9d32e92f006e863a&rsv_sug3=79&rsv_sug1=79&rsv_sug7=100&rsv_n=2&rsv_sug2=0&rsv_sug4=42739
