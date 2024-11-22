@@ -61,7 +61,8 @@ https://blog.csdn.net/skybboy/article/details/105151142
         phontab文件在/root/coastcao/tools/tmp/espeak-1.48.04-source/espeak-data下
 
 11、fatal error: #include <sndfile.hh>
-   解法：源码安装sndfile:
+   解法1：按照7，直接安装libsndfile-devel
+   解法2：源码安装sndfile:
         wget http://www.mega-nerd.com/libsndfile/files/libsndfile-1.0.28.tar.gz
         tar -xzf libsndfile-1.0.28.tar.gz
         cd libsndfile-1.0.28 
@@ -72,3 +73,11 @@ https://blog.csdn.net/skybboy/article/details/105151142
 
 13、linux系统上安装任意版本python：
     https://www.baidu.com/s?wd=ubuntu%20python%E9%99%8D%E7%89%88%E6%9C%AC&rsv_spt=1&rsv_iqid=0xc5993c2f00044585&issp=1&f=8&rsv_bp=1&rsv_idx=2&ie=utf-8&rqlang=cn&tn=baiduhome_pg&rsv_dl=tb&rsv_enter=1&oq=No%2520matching%2520distribution%2520found%2520for%2520yaml&rsv_btype=t&inputT=41186&rsv_t=766cx1mCaCmsijl9o177uS7SIogyf%2BU3WA5Gsw5ZM5n%2FjHbUAtJDu%2B%2BtmVgmWgiaFUJA&rsv_pq=9d32e92f006e863a&rsv_sug3=79&rsv_sug1=79&rsv_sug7=100&rsv_n=2&rsv_sug2=0&rsv_sug4=42739
+
+14、执行infer的时候报错“Failed to init TTS model!
+    Exception from src/inference/src/cpp/core.cpp:90:
+    Exception from src/inference/src/model_reader.cpp:154:
+    Unable to read the model: /root/coqui_vits.xml Please check that model format: xml is supported and the model is correct. Available frontends:    
+
+    ”
+    解法：把openvino的所有so文件都拷贝到可执行文件(infer)同目录下。https://github.com/openvinotoolkit/openvino/issues/21296
