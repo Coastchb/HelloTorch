@@ -10,7 +10,7 @@
 #include <fstream>
 #include <iostream>
 
-
+#include "openvino/openvino.hpp"
 #include "boost/regex.hpp"
 #include "speak_lib.h"
 #include "openvino/openvino.hpp"
@@ -138,10 +138,12 @@ void removeChars(std::string str, const std::string& charsToRemove, std::string&
 }
 
 
-void tts(std::map<std::string, int>& char2id, ov::CompiledModel& model,
+void tts(const int& input_number, std::map<std::string, int>& char2id, ov::CompiledModel* model,
          const std::string& input_text, const std::string& output_wav_filename,
          status_type& return_status) {
     try{
+
+        //auto model = ref_model;
         std::vector<std::tuple<std::string, std::string>> puncs;
         std::vector<std::string> sub_texts;
         strip_to_restore(input_text, puncs, sub_texts);
@@ -164,14 +166,27 @@ void tts(std::map<std::string, int>& char2id, ov::CompiledModel& model,
 
         std::vector<std::string> restored_text;
         restore(puncs, sub_phonemes, restored_text);
+        for (auto x : restored_text) {
+            std::cout << x << "\t";
+        }
 
         std::vector<int> ids;
         decode_character(char2id, restored_text[0], ids);
+        for (auto x : ids) {
+            std::cout << x << "\t";
+        }
 
         std::vector<int> phoneme_ids;
         insert_blank(ids, 178, phoneme_ids);
 
-        ov::InferRequest infer_request = model.create_infer_request();
+        for (auto x : phoneme_ids) {
+            std::cout << x << "\t";
+        }
+
+        std::cout << "[" << std::to_string(input_number) << "][0]in tts:" << std::endl;
+        ov::InferRequest infer_request = model->create_infer_request();
+        
+        std::cout << "[" << std::to_string(input_number) << "][1]in tts:" << std::endl;
 
         ov::Tensor input_tensor_0 = infer_request.get_input_tensor(0);
 
@@ -198,8 +213,14 @@ void tts(std::map<std::string, int>& char2id, ov::CompiledModel& model,
             *x2 = s;
             x2 += 1;
         }
-
+        auto before_infer = static_cast<int>(time(0));
+        std::cout << "[" << std::to_string(input_number) << "][2]in tts,before infer:" << std::to_string(before_infer) << std::endl;
+        //infer_request.start_async();
+        //infer_request.wait();
+        //infer_request.wait_for(std::chrono::milliseconds(2));
         infer_request.infer();
+        auto after_infer = static_cast<int>(time(0));
+        std::cout << "[" << std::to_string(input_number) << "][2]in tts,after infer:" << std::to_string(after_infer) << std::endl;
         const ov::Tensor& output_tensor1 = infer_request.get_output_tensor();
         std::vector<float> wav_data;
         for (auto yo = 0; yo < output_tensor1.get_size(); yo++) {
@@ -219,6 +240,8 @@ void tts(std::map<std::string, int>& char2id, ov::CompiledModel& model,
         // 写入数据到文件
         SndfileHandle file(output_wav_filename, SFM_WRITE, SF_FORMAT_WAV | SF_FORMAT_PCM_16, 1, 22050);
         file.write(wav_data_int.data(), wav_data_int.size());
+        std::cout << "[" << std::to_string(input_number) << "][4]in tts:" << std::endl;
+        infer_request.cancel();
     } catch(const std::exception& ex) {
         std::cerr << "Failed to run TTS inference\n";
         std::cerr << ex.what() << std::endl;
@@ -239,5 +262,30 @@ void replaceAll(std::string& str, const std::string& from, const std::string& to
     while ((start_pos = str.find(from, start_pos)) != std::string::npos) {
         str.replace(start_pos, from.length(), to);
         start_pos += to.length(); // 防止无限循环，如果`to`包含`from`
+    }
+}
+
+void load_model(const std::string& model_path, const std::string& device_type,
+                status_type& init_status,ov::CompiledModel& compiled_model) {
+    std::string device = "CPU";
+    if (device_type == "GPU") {
+        device = "GPU";
+    }                
+    ov::Core core;
+
+    std::shared_ptr<ov::Model> model;
+    std::cout << "Loading model files: " << model_path << std::endl;
+    init_status = status_type::ok;
+    try {
+        model = core.read_model(model_path);
+	//core.set_property({"Device",device})
+        compiled_model = core.compile_model(model, device);
+        espeak_init();
+    } catch (const std::exception& ex) {
+        std::cerr << "Failed to init TTS model!\n";
+        std::cerr << ex.what() << std::endl;
+        init_status = status_type::init_tts_model_failed;
+        //std::cout << static_cast<int>(init_status) << std::endl;
+        //std::cout << static_cast<int>(status_type::init_tts_model_failed) << std::endl;
     }
 }
