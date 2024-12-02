@@ -1,0 +1,59 @@
+1、使用cmake,make安装tensorRT的时候报错：
+(1)onnx does not contain a CMakeLists.txt file
+    解法：（第三步）
+    git clone -b main https://github.com/nvidia/TensorRT TensorRT
+    cd TensorRT
+    git submodule update --init --recursive
+
+    ref:https://github.com/NVIDIA/TensorRT/issues?q=no%20Cmake%20in%20onnx&page=3   
+
+(2) cannot find -lnvinfer
+   解法：https://github.com/NVIDIA/TensorRT/issues/2017 
+
+(3)cmake的时候报错：
+    Please set them or make sure they are set and tested correctly in the CMake files:
+    nvinfer_LIB_PATH
+        linked by target "nvinfer_plugin" in directory /data/workspace/coastcao/tools/TensorRT/plugin
+        linked by target "nvinfer_vc_plugin" in directory /data/workspace/coastcao/tools/TensorRT/plugin
+        linked by target "sample_algorithm_selector" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleAlgorithmSelector
+        linked by target "sample_char_rnn" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleCharRNN
+        linked by target "sample_dynamic_reshape" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleDynamicReshape
+        linked by target "sample_int8_api" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleINT8API
+        linked by target "sample_non_zero_plugin" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleNonZeroPlugin
+        linked by target "sample_onnx_mnist" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleOnnxMNIST
+        linked by target "sample_io_formats" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleIOFormats
+        linked by target "sample_onnx_mnist_coord_conv_ac" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleOnnxMnistCoordConvAC
+        linked by target "sample_named_dimensions" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleNamedDimensions
+        linked by target "sample_progress_monitor" in directory /data/workspace/coastcao/tools/TensorRT/samples/sampleProgressMonitor
+        linked by target "trtexec" in directory /data/workspace/coastcao/tools/TensorRT/samples/trtexec
+
+    解法：上述(2)解法中，下载了TensorRT GA之后，设置export TRT_LIBPATH=$TensorRT_GA_PATH/lib/
+
+2、download_model.sh: line 88: ngc: command not found
+    从https://org.ngc.nvidia.com/setup/installers/cli 下载ngc工具
+
+3、TensorRT/demo/BERT里cmake的时候报错：
+    CMake Error at CMakeLists.txt:39 (set_ifndef):
+    set_ifndef Function invoked with incorrect arguments for function named:
+    set_ifndefe
+    解法：设置TRT_OSSPATH（TensorRT仓库路径）和TRT_LIBPATH（TensorRT GA仓库的lib/路径)两个环境变量
+
+4、/root/miniconda3/lib/python3.10/site-packages/torch/lib/../../nvidia/cusparse/lib/libcusparse.so.12: undefined symbol: __nvJitLinkComplete_12_4, version libnvJitLink.so.12
+    解法：torch版本不对。
+    
+    _masked/__init__.py:223: UserWarning: Failed to initialize NumPy: _ARRAY_API
+    解法：pytorch版本与numpy版本不对（numpy的版本高了）
+    
+    conda search pytorch --info 可以查看pytorch各个版本依赖的模块的版本信息。
+
+5、安装cuda时报错：[ERROR]: Install of driver component failed. Consult the driver log at /var/log/nvidia-installer.log for more details.
+   解法：安装选项中，把Driver安装选项取消掉（因为驱动已经安装了）。 另外，Cuda最好用.run安装包安装。
+
+6、(Network input scales is a shape tensor and must have type Int32 or Int64. Type is Float.)
+    解法：scala强制转换为int类型：(vits.py)
+    y_mask = sequence_mask(y_lengths, None).to(x_mask.dtype).unsqueeze(1)  # [B, 1, T_dec]
+    改为：y_mask = sequence_mask(y_lengths, int(y_lengths.tolist()[0])).to(x_mask.dtype).unsqueeze(1)  # [B, 1, T_dec]
+    ref:https://forums.developer.nvidia.com/t/floor-cast-resize-or-slice-cause-internal-error/197588/7
+
+7、使用trtexec转换onnx模型为trt模型，并设置变长输入的shape：
+    trtexec --onnx=coqui_vits.onnx --saveEngine=coqui_vits_bs1_sl128.engine --minShapes=input:1x128 --maxShapes=input:1x128 --optShapes=input:1x128
