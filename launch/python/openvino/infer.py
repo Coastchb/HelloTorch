@@ -13,18 +13,19 @@ from TTS.config import load_config
 from TTS.utils.audio.numpy_transforms import save_wav
 
 
-onnx_model_path = Path('../models/coqui_vits.xml')
+onnx_model_path = Path('../models/coqui_vits_G.xml')
 input_text = 'No, so being able to, like, get in different positions for you, Like, specifically doggie, Mmm, I fuck myself.'
-#input_text = 'No, so being able to'
+input_text = 'Thank you for your support, looking foward to continuing our cooperation next time'
 
 # convert text to sequence of token IDs
-config_file_path = '../models/config.json'
+config_file_path = '../models/G_config.json'
 config = load_config(config_file_path)
 vits_model = Vits.init_from_config(config)
 input_tokens = np.asarray(
     vits_model.tokenizer.text_to_ids(input_text),
     dtype=np.int32,
 )
+print('input_text:', input_text)
 print('input_tokens:', input_tokens)
 print('len:', len(input_tokens))
 # infer

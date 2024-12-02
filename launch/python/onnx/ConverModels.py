@@ -11,11 +11,11 @@ from TTS.tts.models.vits import Vits
 from TTS.config import load_config
 #import torch
 
-config_file_path = '../models/config.json'
-input_model_path = '../models/best_model.pth'
+config_file_path = '../models/G_config.json'
+input_model_path = '../models/G_model.pth'
 
 # output config
-onnx_model_path = Path('../models/coqui_vits.onnx')
+onnx_model_path = Path('../models/coqui_vits_G.onnx')
 ir_model_path = onnx_model_path.with_suffix('.xml')
 
 # convert PyTorch model to ONNX model
