@@ -1,0 +1,797 @@
+2024-12-01 12:53:15.024708820 [I:onnxruntime:, inference_session.cc:583 TraceSessionOptions] Session Options {  execution_mode:0 execution_order:DEFAULT enable_profiling:0 optimized_model_filepath:"" enable_mem_pattern:1 enable_mem_reuse:1 enable_cpu_mem_arena:1 profile_file_prefix:onnxruntime_profile_ session_logid: session_log_severity_level:1 session_log_verbosity_level:0 max_num_graph_transformation_steps:10 graph_optimization_level:3 intra_op_param:OrtThreadPoolParams { thread_pool_size: 0 auto_set_affinity: 0 allow_spinning: 1 dynamic_block_base_: 0 stack_size: 0 affinity_str:  set_denormal_as_zero: 0 } inter_op_param:OrtThreadPoolParams { thread_pool_size: 0 auto_set_affinity: 0 allow_spinning: 1 dynamic_block_base_: 0 stack_size: 0 affinity_str:  set_denormal_as_zero: 0 } use_per_session_threads:1 thread_pool_allow_spinning:1 use_deterministic_compute:0 config_options: {  } }
+2024-12-01 12:53:15.024777829 [I:onnxruntime:, inference_session.cc:483 operator()] Flush-to-zero and denormal-as-zero are off
+2024-12-01 12:53:15.024787162 [I:onnxruntime:, inference_session.cc:491 ConstructorCommon] Creating and using per session threadpools since use_per_session_threads_ is true
+2024-12-01 12:53:15.024800759 [I:onnxruntime:, inference_session.cc:509 ConstructorCommon] Dynamic block base set to 0
+2024-12-01 12:53:15.240900514 [I:onnxruntime:, inference_session.cc:1661 Initialize] Initializing session.
+2024-12-01 12:53:15.240957817 [I:onnxruntime:Default, bfc_arena.cc:29 BFCArena] Creating BFCArena for Cpu with following configs: initial_chunk_size_bytes: 1048576 max_dead_bytes_per_chunk: 134217728 initial_growth_chunk_size_bytes: 2097152 max_power_of_two_extend_bytes: 1073741824 memory limit: 18446744073709551615 arena_extend_strategy: 0
+2024-12-01 12:53:15.242713124 [I:onnxruntime:, graph_partitioner.cc:898 InlineFunctionsAOT] This model does not have any local functions defined. AOT Inlining is not performed
+2024-12-01 12:53:15.244477518 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer EnsureUniqueDQForNodeUnit modified: 0 with status: OK
+2024-12-01 12:53:15.247974717 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer Level1_RuleBasedTransformer modified: 1 with status: OK
+2024-12-01 12:53:15.278188383 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_10026'. It is no longer used by any node.
+2024-12-01 12:53:15.278225265 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_10022'. It is no longer used by any node.
+2024-12-01 12:53:15.278232051 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8393'. It is no longer used by any node.
+2024-12-01 12:53:15.278238114 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_10021'. It is no longer used by any node.
+2024-12-01 12:53:15.278243805 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8378'. It is no longer used by any node.
+2024-12-01 12:53:15.278249235 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8330'. It is no longer used by any node.
+2024-12-01 12:53:15.278255004 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8314'. It is no longer used by any node.
+2024-12-01 12:53:15.278260326 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_10017'. It is no longer used by any node.
+2024-12-01 12:53:15.278265682 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9991'. It is no longer used by any node.
+2024-12-01 12:53:15.278271264 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9987'. It is no longer used by any node.
+2024-12-01 12:53:15.278276541 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8300'. It is no longer used by any node.
+2024-12-01 12:53:15.278294120 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9967'. It is no longer used by any node.
+2024-12-01 12:53:15.278299622 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8252'. It is no longer used by any node.
+2024-12-01 12:53:15.278304859 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8251'. It is no longer used by any node.
+2024-12-01 12:53:15.278310390 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9962'. It is no longer used by any node.
+2024-12-01 12:53:15.278315535 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8236'. It is no longer used by any node.
+2024-12-01 12:53:15.278320731 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8235'. It is no longer used by any node.
+2024-12-01 12:53:15.278326010 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9961'. It is no longer used by any node.
+2024-12-01 12:53:15.278331534 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9957'. It is no longer used by any node.
+2024-12-01 12:53:15.278336595 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8221'. It is no longer used by any node.
+2024-12-01 12:53:15.278341709 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8220'. It is no longer used by any node.
+2024-12-01 12:53:15.278347540 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9932'. It is no longer used by any node.
+2024-12-01 12:53:15.278353216 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8142'. It is no longer used by any node.
+2024-12-01 12:53:15.278358298 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8141'. It is no longer used by any node.
+2024-12-01 12:53:15.278364063 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9912'. It is no longer used by any node.
+2024-12-01 12:53:15.278369094 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8087'. It is no longer used by any node.
+2024-12-01 12:53:15.278374401 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9902'. It is no longer used by any node.
+2024-12-01 12:53:15.278379464 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8057'. It is no longer used by any node.
+2024-12-01 12:53:15.278384752 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9901'. It is no longer used by any node.
+2024-12-01 12:53:15.278390541 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9882'. It is no longer used by any node.
+2024-12-01 12:53:15.278395852 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9877'. It is no longer used by any node.
+2024-12-01 12:53:15.278400988 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9876'. It is no longer used by any node.
+2024-12-01 12:53:15.278407133 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7929'. It is no longer used by any node.
+2024-12-01 12:53:15.278413066 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9851'. It is no longer used by any node.
+2024-12-01 12:53:15.278418440 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9992'. It is no longer used by any node.
+2024-12-01 12:53:15.278428225 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7899'. It is no longer used by any node.
+2024-12-01 12:53:15.278433358 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9841'. It is no longer used by any node.
+2024-12-01 12:53:15.278439683 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7851'. It is no longer used by any node.
+2024-12-01 12:53:15.278444894 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7850'. It is no longer used by any node.
+2024-12-01 12:53:15.278450199 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9817'. It is no longer used by any node.
+2024-12-01 12:53:15.278455748 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7819'. It is no longer used by any node.
+2024-12-01 12:53:15.278460934 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7766'. It is no longer used by any node.
+2024-12-01 12:53:15.278466207 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7765'. It is no longer used by any node.
+2024-12-01 12:53:15.278471440 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9796'. It is no longer used by any node.
+2024-12-01 12:53:15.278477025 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9792'. It is no longer used by any node.
+2024-12-01 12:53:15.278482190 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7750'. It is no longer used by any node.
+2024-12-01 12:53:15.278502232 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9791'. It is no longer used by any node.
+2024-12-01 12:53:15.278509287 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9787'. It is no longer used by any node.
+2024-12-01 12:53:15.278514663 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7735'. It is no longer used by any node.
+2024-12-01 12:53:15.278520070 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7734'. It is no longer used by any node.
+2024-12-01 12:53:15.278526577 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8409'. It is no longer used by any node.
+2024-12-01 12:53:15.278531916 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9767'. It is no longer used by any node.
+2024-12-01 12:53:15.278537206 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7686'. It is no longer used by any node.
+2024-12-01 12:53:15.278542521 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9761'. It is no longer used by any node.
+2024-12-01 12:53:15.278548629 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9757'. It is no longer used by any node.
+2024-12-01 12:53:15.278553901 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9936'. It is no longer used by any node.
+2024-12-01 12:53:15.278559013 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7656'. It is no longer used by any node.
+2024-12-01 12:53:15.278564544 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7655'. It is no longer used by any node.
+2024-12-01 12:53:15.278569912 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9756'. It is no longer used by any node.
+2024-12-01 12:53:15.278578900 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_10027'. It is no longer used by any node.
+2024-12-01 12:53:15.278584307 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7608'. It is no longer used by any node.
+2024-12-01 12:53:15.278589566 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7607'. It is no longer used by any node.
+2024-12-01 12:53:15.278594924 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9732'. It is no longer used by any node.
+2024-12-01 12:53:15.278600049 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7592'. It is no longer used by any node.
+2024-12-01 12:53:15.278606044 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7577'. It is no longer used by any node.
+2024-12-01 12:53:15.278611797 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7576'. It is no longer used by any node.
+2024-12-01 12:53:15.278618086 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9707'. It is no longer used by any node.
+2024-12-01 12:53:15.278623359 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7529'. It is no longer used by any node.
+2024-12-01 12:53:15.278629038 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9701'. It is no longer used by any node.
+2024-12-01 12:53:15.278634399 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7498'. It is no longer used by any node.
+2024-12-01 12:53:15.278639612 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7497'. It is no longer used by any node.
+2024-12-01 12:53:15.278645327 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7444'. It is no longer used by any node.
+2024-12-01 12:53:15.278650540 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7443'. It is no longer used by any node.
+2024-12-01 12:53:15.278656481 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9677'. It is no longer used by any node.
+2024-12-01 12:53:15.278661913 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7428'. It is no longer used by any node.
+2024-12-01 12:53:15.278667196 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7427'. It is no longer used by any node.
+2024-12-01 12:53:15.278672407 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9676'. It is no longer used by any node.
+2024-12-01 12:53:15.278678233 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7413'. It is no longer used by any node.
+2024-12-01 12:53:15.278684242 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9652'. It is no longer used by any node.
+2024-12-01 12:53:15.278689515 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7363'. It is no longer used by any node.
+2024-12-01 12:53:15.278694893 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9651'. It is no longer used by any node.
+2024-12-01 12:53:15.278700246 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9647'. It is no longer used by any node.
+2024-12-01 12:53:15.278705356 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7348'. It is no longer used by any node.
+2024-12-01 12:53:15.278713905 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7347'. It is no longer used by any node.
+2024-12-01 12:53:15.278720091 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9642'. It is no longer used by any node.
+2024-12-01 12:53:15.278725530 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9641'. It is no longer used by any node.
+2024-12-01 12:53:15.278731427 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9622'. It is no longer used by any node.
+2024-12-01 12:53:15.278736676 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7284'. It is no longer used by any node.
+2024-12-01 12:53:15.278742416 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7268'. It is no longer used by any node.
+2024-12-01 12:53:15.278747562 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9616'. It is no longer used by any node.
+2024-12-01 12:53:15.278753030 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9611'. It is no longer used by any node.
+2024-12-01 12:53:15.278759078 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7204'. It is no longer used by any node.
+2024-12-01 12:53:15.278764358 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7203'. It is no longer used by any node.
+2024-12-01 12:53:15.278770176 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9587'. It is no longer used by any node.
+2024-12-01 12:53:15.278775762 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7188'. It is no longer used by any node.
+2024-12-01 12:53:15.278780844 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9586'. It is no longer used by any node.
+2024-12-01 12:53:15.278786393 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9582'. It is no longer used by any node.
+2024-12-01 12:53:15.278791545 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7173'. It is no longer used by any node.
+2024-12-01 12:53:15.278796798 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9581'. It is no longer used by any node.
+2024-12-01 12:53:15.278807559 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7172'. It is no longer used by any node.
+2024-12-01 12:53:15.278815301 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7364'. It is no longer used by any node.
+2024-12-01 12:53:15.278821089 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9646'. It is no longer used by any node.
+2024-12-01 12:53:15.278830318 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9966'. It is no longer used by any node.
+2024-12-01 12:53:15.278838892 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7412'. It is no longer used by any node.
+2024-12-01 12:53:15.278848032 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8071'. It is no longer used by any node.
+2024-12-01 12:53:15.278866198 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9871'. It is no longer used by any node.
+2024-12-01 12:53:15.278872306 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Constant_144_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.278883672 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9762'. It is no longer used by any node.
+2024-12-01 12:53:15.278891482 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8410'. It is no longer used by any node.
+2024-12-01 12:53:15.278898413 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8299'. It is no longer used by any node.
+2024-12-01 12:53:15.278906432 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7267'. It is no longer used by any node.
+2024-12-01 12:53:15.278920132 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_10016'. It is no longer used by any node.
+2024-12-01 12:53:15.278939504 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Constant_144_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.278949796 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Constant_96_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.278956878 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8173'. It is no longer used by any node.
+2024-12-01 12:53:15.278964181 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Constant_96_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.278974861 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8072'. It is no longer used by any node.
+2024-12-01 12:53:15.278980091 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Constant_41_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.278990098 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7898'. It is no longer used by any node.
+2024-12-01 12:53:15.278996328 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7252'. It is no longer used by any node.
+2024-12-01 12:53:15.279011471 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8394'. It is no longer used by any node.
+2024-12-01 12:53:15.279025899 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7591'. It is no longer used by any node.
+2024-12-01 12:53:15.279039996 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9811'. It is no longer used by any node.
+2024-12-01 12:53:15.279045591 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7978'. It is no longer used by any node.
+2024-12-01 12:53:15.279052266 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7187'. It is no longer used by any node.
+2024-12-01 12:53:15.279058289 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7283'. It is no longer used by any node.
+2024-12-01 12:53:15.279074128 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9612'. It is no longer used by any node.
+2024-12-01 12:53:15.279081206 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Constant_41_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.279102413 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7671'. It is no longer used by any node.
+2024-12-01 12:53:15.279121102 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9937'. It is no longer used by any node.
+2024-12-01 12:53:15.279137067 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8156'. It is no longer used by any node.
+2024-12-01 12:53:15.279155429 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7834'. It is no longer used by any node.
+2024-12-01 12:53:15.279169269 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9997'. It is no longer used by any node.
+2024-12-01 12:53:15.279180912 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7670'. It is no longer used by any node.
+2024-12-01 12:53:15.279191204 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Constant_41_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.279198227 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9617'. It is no longer used by any node.
+2024-12-01 12:53:15.279204565 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9727'. It is no longer used by any node.
+2024-12-01 12:53:15.279215295 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8009'. It is no longer used by any node.
+2024-12-01 12:53:15.279228295 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Constant_144_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.279244185 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Constant_96_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.279257720 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7253'. It is no longer used by any node.
+2024-12-01 12:53:15.279264669 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7992'. It is no longer used by any node.
+2024-12-01 12:53:15.279272599 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9696'. It is no longer used by any node.
+2024-12-01 12:53:15.279278636 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9821'. It is no longer used by any node.
+2024-12-01 12:53:15.279284438 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9702'. It is no longer used by any node.
+2024-12-01 12:53:15.279298933 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8331'. It is no longer used by any node.
+2024-12-01 12:53:15.279308294 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7332'. It is no longer used by any node.
+2024-12-01 12:53:15.279320293 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8315'. It is no longer used by any node.
+2024-12-01 12:53:15.279327342 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7993'. It is no longer used by any node.
+2024-12-01 12:53:15.279332575 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7687'. It is no longer used by any node.
+2024-12-01 12:53:15.279338887 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9681'. It is no longer used by any node.
+2024-12-01 12:53:15.279356158 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9592'. It is no longer used by any node.
+2024-12-01 12:53:15.279366311 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7333'. It is no longer used by any node.
+2024-12-01 12:53:15.279378436 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9822'. It is no longer used by any node.
+2024-12-01 12:53:15.279384217 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9907'. It is no longer used by any node.
+2024-12-01 12:53:15.279394260 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7820'. It is no longer used by any node.
+2024-12-01 12:53:15.279403017 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9766'. It is no longer used by any node.
+2024-12-01 12:53:15.279418180 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9872'. It is no longer used by any node.
+2024-12-01 12:53:15.279425853 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9852'. It is no longer used by any node.
+2024-12-01 12:53:15.279440709 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7914'. It is no longer used by any node.
+2024-12-01 12:53:15.279460278 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9621'. It is no longer used by any node.
+2024-12-01 12:53:15.279473388 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9672'. It is no longer used by any node.
+2024-12-01 12:53:15.279480089 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8157'. It is no longer used by any node.
+2024-12-01 12:53:15.279512383 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9816'. It is no longer used by any node.
+2024-12-01 12:53:15.279522087 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9956'. It is no longer used by any node.
+2024-12-01 12:53:15.279531744 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9847'. It is no longer used by any node.
+2024-12-01 12:53:15.279549733 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9591'. It is no longer used by any node.
+2024-12-01 12:53:15.279562837 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9797'. It is no longer used by any node.
+2024-12-01 12:53:15.279578243 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9842'. It is no longer used by any node.
+2024-12-01 12:53:15.279590267 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8172'. It is no longer used by any node.
+2024-12-01 12:53:15.279600652 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9911'. It is no longer used by any node.
+2024-12-01 12:53:15.279616622 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9671'. It is no longer used by any node.
+2024-12-01 12:53:15.279630676 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9697'. It is no longer used by any node.
+2024-12-01 12:53:15.279643243 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8379'. It is no longer used by any node.
+2024-12-01 12:53:15.279653804 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9726'. It is no longer used by any node.
+2024-12-01 12:53:15.279664931 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9682'. It is no longer used by any node.
+2024-12-01 12:53:15.279675421 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9881'. It is no longer used by any node.
+2024-12-01 12:53:15.279682642 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9996'. It is no longer used by any node.
+2024-12-01 12:53:15.279692433 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7528'. It is no longer used by any node.
+2024-12-01 12:53:15.279703840 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7513'. It is no longer used by any node.
+2024-12-01 12:53:15.279715879 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9846'. It is no longer used by any node.
+2024-12-01 12:53:15.279724510 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7930'. It is no longer used by any node.
+2024-12-01 12:53:15.279741149 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9927'. It is no longer used by any node.
+2024-12-01 12:53:15.279747069 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9812'. It is no longer used by any node.
+2024-12-01 12:53:15.279762242 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7512'. It is no longer used by any node.
+2024-12-01 12:53:15.279769764 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9906'. It is no longer used by any node.
+2024-12-01 12:53:15.279782081 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9986'. It is no longer used by any node.
+2024-12-01 12:53:15.279788083 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7749'. It is no longer used by any node.
+2024-12-01 12:53:15.279794322 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7835'. It is no longer used by any node.
+2024-12-01 12:53:15.279808933 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9926'. It is no longer used by any node.
+2024-12-01 12:53:15.279814703 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9731'. It is no longer used by any node.
+2024-12-01 12:53:15.279821693 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8008'. It is no longer used by any node.
+2024-12-01 12:53:15.279830119 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8088'. It is no longer used by any node.
+2024-12-01 12:53:15.279841366 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7913'. It is no longer used by any node.
+2024-12-01 12:53:15.279846586 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9706'. It is no longer used by any node.
+2024-12-01 12:53:15.279857058 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9786'. It is no longer used by any node.
+2024-12-01 12:53:15.279863497 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_7977'. It is no longer used by any node.
+2024-12-01 12:53:15.279878097 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9736'. It is no longer used by any node.
+2024-12-01 12:53:15.279885077 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9737'. It is no longer used by any node.
+2024-12-01 12:53:15.279899365 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_8056'. It is no longer used by any node.
+2024-12-01 12:53:15.279909283 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9931'. It is no longer used by any node.
+2024-12-01 12:53:15.283710224 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer DoubleQDQPairsRemover modified: 0 with status: OK
+2024-12-01 12:53:15.302667193 [I:onnxruntime:, constant_sharing.cc:248 ApplyImpl] Total shared scalar initializer count: 2350
+2024-12-01 12:53:15.302902629 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer ConstantSharing modified: 1 with status: OK
+2024-12-01 12:53:15.338428596 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer CommonSubexpressionElimination modified: 1 with status: OK
+2024-12-01 12:53:15.374275771 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer ConstantFolding modified: 1 with status: OK
+2024-12-01 12:53:15.395763482 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Shape_31_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395795150 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Shape_23_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395801821 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Shape_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395808000 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Shape_64_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395813710 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Shape_58_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395819530 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Shape_52_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395826406 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Shape_31_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395832552 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Shape_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395837952 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Shape_64_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395844054 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Shape_58_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395850301 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Shape_52_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395855957 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Shape_45_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395861917 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Shape_38_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395867943 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Shape_31_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395874328 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Shape_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395879939 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Transpose_1_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395896264 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Slice_3_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395901801 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Reshape_1_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395906985 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Concat_1_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395912195 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/ConstantOfShape_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395918145 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Shape_64_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395924069 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Shape_58_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395930137 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Shape_52_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395936600 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Transpose_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395945267 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Slice_11_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395953462 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Reshape_17_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395961941 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/ConstantOfShape_19_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395970898 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/Transpose_2_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395976568 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/Slice_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395982663 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Sub_7_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395988432 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Sub_9_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395993768 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Sub_4_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.395999079 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Gather_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396005032 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Shape_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396010506 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Sub_10_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396015687 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Gather_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396024469 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Shape_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396030020 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Sub_7_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396035310 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Gather_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396041484 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Shape_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396049898 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Sub_9_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396058705 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Gather_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396067074 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Shape_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396075523 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Sub_4_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396080909 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Gather_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396086103 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Shape_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396091717 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Sub_10_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396097380 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Gather_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396102737 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.4/Shape_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396108375 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Gather_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396113630 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Shape_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396119446 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Sub_9_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396124822 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Gather_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396130098 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Shape_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396135514 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Sub_4_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396140772 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Shape_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396149722 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Sub_10_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396155358 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Gather_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396160777 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Shape_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396166180 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Sub_7_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396171519 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Gather_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396176706 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Shape_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396182097 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Sub_9_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396187417 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Shape_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396192800 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Sub_4_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396199572 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Gather_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396204993 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Shape_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396211465 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Sub_10_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396216886 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Gather_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396222132 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Shape_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396227497 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Sub_7_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396232830 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.2/Gather_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396238006 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Gather_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396243355 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Sub_9_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396248779 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Gather_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396254026 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Shape_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396263562 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Gather_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396269036 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Shape_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396274359 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Sub_10_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396279992 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Sub_7_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396285304 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Gather_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396290452 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Shape_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396295973 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Sub_9_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396301218 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Gather_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396306539 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Shape_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396312055 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Shape_23_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396317321 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Transpose_4_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396322495 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Slice_2_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396327933 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Reshape_5_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396333250 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Concat_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396338745 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Sub_4_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396343856 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Gather_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396348978 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Shape_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396354614 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Sub_10_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396360001 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Gather_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396368426 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.0/Shape_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396373918 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/ffn_layers.5/Transpose_1_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396379452 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/ffn_layers.5/Slice_1_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396385302 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/ffn_layers.5/Reshape_2_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396390540 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/ffn_layers.5/ConstantOfShape_1_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396398562 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/Constant_18_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396406498 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Gather_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396411727 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/ffn_layers.5/Concat_1_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396417495 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Constant_129_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396423682 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Constant_20_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396429016 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Gather_8_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396436234 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/ffn_layers.5/Constant_9_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396441698 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Constant_125_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396446825 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Constant_47_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396452475 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Gather_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396463154 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Shape_45_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396482650 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Shape_23_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396511232 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Shape_45_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396518898 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Shape_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396532952 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Constant_105_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396565819 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.3/Shape_38_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396573680 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Shape_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396582933 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/Concat_3_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396590638 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Shape_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396598789 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.5/Gather_13_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396609108 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Exp_9560'. It is no longer used by any node.
+2024-12-01 12:53:15.396624105 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.3/Sub_7_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396632507 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/Reshape_3_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396639425 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Shape_14_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396647083 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/text_encoder/encoder/attn_layers.1/Sub_4_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396658794 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/Shape_38_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.396672256 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.4/Concat_11_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.398824793 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulAddFusion modified: 0 with status: OK
+2024-12-01 12:53:15.400159074 [I:onnxruntime:, reshape_fusion.cc:49 ApplyImpl] Fused reshape node: /Reshape_1_output_0
+2024-12-01 12:53:15.400203492 [I:onnxruntime:, reshape_fusion.cc:55 ApplyImpl] Total fused reshape node count: 1
+2024-12-01 12:53:15.400210975 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer ReshapeFusion modified: 1 with status: OK
+2024-12-01 12:53:15.421853269 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer FreeDimensionOverrideTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.423130353 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QDQPropagationTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.424267343 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer EnsureUniqueDQForNodeUnit modified: 0 with status: OK
+2024-12-01 12:53:15.425376493 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer RocmBlasAltImpl modified: 0 with status: OK
+2024-12-01 12:53:15.448745675 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer TransposeOptimizer modified: 1 with status: OK
+2024-12-01 12:53:15.472010321 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Gather_token_327_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472055632 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_324_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472062800 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_322_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472090175 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_321_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472096293 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_319_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472101674 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_317_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472107387 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_316_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472112738 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_314_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472118150 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_313_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472123424 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_312_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472129049 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_311_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472134739 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_308_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472140711 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_305_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472146116 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_304_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472151354 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_303_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472157244 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_299_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472163060 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_294_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472168707 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_290_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472174207 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_287_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472179528 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_285_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472184953 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_282_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472190770 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_279_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472196160 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_277_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472201491 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_276_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472206809 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_275_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472212001 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_274_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472220380 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_271_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472226010 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_270_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472231343 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_269_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472237274 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_267_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472242696 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_266_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472248647 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_265_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472254295 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_264_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472259613 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_261_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472265532 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_255_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472271158 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_253_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472276568 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_251_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472282148 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_250_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472287535 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_248_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472292722 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_247_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472298046 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_246_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472303969 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_245_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472309202 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_244_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472314521 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_243_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472319597 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_242_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472325061 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_241_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472330238 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_240_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472335658 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_239_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472341121 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_237_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472346606 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_236_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472355038 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_234_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472360894 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_232_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472366358 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_231_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472371651 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_229_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472376946 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_227_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472382482 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_226_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472388362 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_222_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472394104 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_221_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472399526 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_217_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472405320 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_216_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472410532 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_215_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472416344 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_213_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472422295 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_212_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472427969 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_211_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472433502 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_210_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472439023 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_208_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472444488 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_207_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472449651 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_206_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472455052 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_205_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472460161 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_204_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472465591 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_202_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472471318 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_200_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472477415 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_198_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472485933 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_197_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472507300 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_193_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472513008 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_192_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472518868 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_184_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472524490 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_183_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472530316 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_182_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472535645 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_181_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472541004 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_180_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472546707 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_178_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472552587 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_177_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472558494 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_175_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472563815 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_174_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472569093 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_173_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472574847 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_172_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472580246 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_171_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472585643 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_176_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472590958 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_170_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472596345 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_169_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472601984 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_168_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472607977 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_162_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472613447 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_160_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472619181 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_156_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472624503 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_155_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472635649 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_153_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472641510 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_149_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472647371 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_147_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472653138 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_145_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472658814 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_143_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472664513 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_141_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472670145 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_140_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472675743 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_139_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472681079 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_138_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472687029 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_137_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472692547 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_136_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472698074 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_297_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472703296 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_135_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472708872 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_134_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472714261 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_132_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472719785 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_131_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472725252 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_129_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472730863 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_128_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472736991 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_122_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472742952 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_121_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472748615 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_119_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472754211 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_117_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472759875 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_115_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472768713 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_113_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472774509 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_112_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472780130 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_111_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472785578 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_109_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472790907 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_107_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472796455 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_106_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472802662 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_104_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472807957 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_103_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472813294 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_259_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472818691 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_102_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472824176 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_98_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472829832 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_95_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472835535 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_94_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472840822 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_93_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472846387 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_92_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472851621 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_91_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472857501 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_90_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472862835 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_89_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472868228 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_86_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472873571 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_85_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472879120 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_84_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472884712 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_82_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472890484 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_81_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472896004 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_80_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472904814 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_77_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472910401 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_74_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472916068 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_291_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472921417 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_71_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472927135 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_70_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472932525 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_68_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472937916 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_66_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472943384 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_65_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472948994 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_63_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472954326 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_59_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472959822 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_57_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472965347 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_53_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472970657 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_52_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472976614 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_50_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472982282 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_49_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472987710 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_48_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472993239 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_47_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.472999006 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_45_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473007429 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_44_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473016053 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_40_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473025142 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_39_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473034571 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_38_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473042974 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_37_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473052873 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_33_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473058943 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_30_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473064624 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_29_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473070112 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_27_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473076144 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_22_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473081590 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_21_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473087587 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_20_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473092933 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_17_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473098078 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_16_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473103590 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_12_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473109427 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_10_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473114906 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_9_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473120438 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_6_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473126011 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_5_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473131754 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_3_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473137292 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_2_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473143726 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_258_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473153771 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_268_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473162446 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_164_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473170999 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_62_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473179560 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_97_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473185801 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_230_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473199236 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_13_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473211983 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_51_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473221031 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_235_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473230266 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_142_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473240179 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_78_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473257168 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_96_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473272430 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_188_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473279808 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_272_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473286220 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_24_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473291869 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_25_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473297334 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_105_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473308250 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_41_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473317927 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_150_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473331702 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_201_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473339108 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_218_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473344774 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_110_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473351400 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_54_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473363134 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_166_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473368900 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_196_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473374977 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_199_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473383450 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_163_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473390325 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_281_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473398734 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_187_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473404527 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_144_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473414962 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_75_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473428048 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_161_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473434234 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_11_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473452255 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_120_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473458023 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_67_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473471118 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_249_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473478488 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_292_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473513103 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_219_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473522078 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_273_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473536423 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_101_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473559415 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_300_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473571311 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_191_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473582331 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_323_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473596128 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_28_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473613621 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_64_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473627990 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_61_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473639517 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_307_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473644825 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_46_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473652209 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_42_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473661532 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_252_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473675115 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_87_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473682192 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_223_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473691933 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_152_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473700102 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_284_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473710762 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_26_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473718285 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_306_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473724373 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_280_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473730482 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_118_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473737745 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_194_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473743613 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_190_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473757267 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_220_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473769455 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_55_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473776602 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_309_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473785058 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_7_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473792868 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_23_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473808456 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_318_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473817433 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_286_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473825080 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_257_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473832596 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_260_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473843211 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_130_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473853463 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_88_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473868184 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_14_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473877065 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_0_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473882848 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_325_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473893631 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_123_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473904948 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_179_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473915114 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_254_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473926597 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_19_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473938526 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_238_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473948357 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_262_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473953951 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_100_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473974706 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_69_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473981347 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_133_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.473992575 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_263_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474004995 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_186_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474012665 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_209_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474019431 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_151_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474025695 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_56_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474031379 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_167_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474038657 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_35_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474046200 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_233_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474051572 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_228_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474063405 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_4_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474073141 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_278_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474078461 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_185_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474088610 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_189_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474098806 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_165_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474119291 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_315_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474128482 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_108_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474135480 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_99_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474153515 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_301_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474177420 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_203_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474183683 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_214_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474192452 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_43_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474200580 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_79_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474212165 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_34_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474224965 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_18_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474241338 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_225_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474247591 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_60_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474262361 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_8_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474268425 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_58_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474275762 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_283_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474285059 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_296_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474293084 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_310_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474305280 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_83_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474311661 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_31_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474317198 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Gather_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474326933 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_293_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474338588 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_146_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474345073 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_124_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474353526 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_256_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474386378 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_114_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474396962 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_32_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474410861 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_288_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474421736 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_159_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474427753 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_289_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474435381 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_158_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474442786 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_36_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474450493 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_1_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474460868 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_76_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474467765 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_72_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474473397 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_195_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474502327 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_295_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474509845 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_298_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474519134 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_127_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474533665 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_125_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474539263 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_157_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474551853 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_320_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474558333 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_154_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474564431 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_148_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474579603 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_302_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474589986 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_73_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474598711 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_15_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474606986 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_126_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474617244 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_116_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.474626103 [I:onnxruntime:, graph.cc:4264 CleanUnusedInitializersAndNodeArgs] Removing NodeArg 'Transpose_token_224_out0'. It is no longer used by any node.
+2024-12-01 12:53:15.477561292 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer Level1_RuleBasedTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.478759562 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer DoubleQDQPairsRemover modified: 0 with status: OK
+2024-12-01 12:53:15.484057237 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer CommonSubexpressionElimination modified: 0 with status: OK
+2024-12-01 12:53:15.485886513 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer ConstantFolding modified: 0 with status: OK
+2024-12-01 12:53:15.486850916 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulAddFusion modified: 0 with status: OK
+2024-12-01 12:53:15.488116427 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer ReshapeFusion modified: 0 with status: OK
+2024-12-01 12:53:15.488149327 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer FreeDimensionOverrideTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.489166979 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QDQPropagationTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.490128866 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer EnsureUniqueDQForNodeUnit modified: 0 with status: OK
+2024-12-01 12:53:15.491088968 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer RocmBlasAltImpl modified: 0 with status: OK
+2024-12-01 12:53:15.506694092 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer Level2_RuleBasedTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.512482278 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer TransposeOptimizer_CPUExecutionProvider modified: 0 with status: OK
+2024-12-01 12:53:15.513554749 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QDQS8ToU8Transformer modified: 0 with status: OK
+2024-12-01 12:53:15.515480316 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QDQSelectorActionTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.516445736 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer GemmActivationFusion modified: 0 with status: OK
+2024-12-01 12:53:15.517510819 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulIntegerToFloatFusion modified: 0 with status: OK
+2024-12-01 12:53:15.518410614 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer DynamicQuantizeMatMulFusion modified: 0 with status: OK
+2024-12-01 12:53:15.520203360 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer ConvActivationFusion modified: 1 with status: OK
+2024-12-01 12:53:15.547987137 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer GeluFusion modified: 1 with status: OK
+2024-12-01 12:53:15.569320504 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/convs/Constant_17_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.569363589 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/duration_predictor/flows.2/convs/Constant_12_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.571349378 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer LayerNormFusion modified: 0 with status: OK
+2024-12-01 12:53:15.572279819 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer SimplifiedLayerNormFusion modified: 0 with status: OK
+2024-12-01 12:53:15.573117412 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer AttentionFusion modified: 0 with status: OK
+2024-12-01 12:53:15.573937053 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer EmbedLayerNormFusion modified: 0 with status: OK
+2024-12-01 12:53:15.575994451 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer GatherSliceToSplitFusion modified: 1 with status: OK
+2024-12-01 12:53:15.595340278 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer 'onnx::Slice_9994'. It is no longer used by any node.
+2024-12-01 12:53:15.595374265 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/flow/flows.0/enc/Constant_25_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.595394341 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/flow/flows.0/enc/Constant_2_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.595400274 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/flow/flows.1/enc/Constant_37_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.595405981 [I:onnxruntime:, graph.cc:4201 CleanUnusedInitializersAndNodeArgs] Removing initializer '/flow/flows.3/enc/Constant_38_output_0'. It is no longer used by any node.
+2024-12-01 12:53:15.597247532 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer GatherToSliceFusion modified: 0 with status: OK
+2024-12-01 12:53:15.598718958 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatmulTransposeFusion modified: 1 with status: OK
+2024-12-01 12:53:15.619035069 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer BiasGeluFusion modified: 0 with status: OK
+2024-12-01 12:53:15.619914098 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer SkipLayerNormFusion modified: 0 with status: OK
+2024-12-01 12:53:15.620896493 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer FastGeluFusion modified: 0 with status: OK
+2024-12-01 12:53:15.621852461 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QuickGeluFusion modified: 0 with status: OK
+2024-12-01 12:53:15.622800192 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer BiasSoftmaxFusion modified: 0 with status: OK
+2024-12-01 12:53:15.623723865 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer BiasDropoutFusion modified: 0 with status: OK
+2024-12-01 12:53:15.624942873 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulScaleFusion modified: 1 with status: OK
+2024-12-01 12:53:15.645393212 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulActivationFusion modified: 0 with status: OK
+2024-12-01 12:53:15.646476887 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulNBitsFusion modified: 0 with status: OK
+2024-12-01 12:53:15.647352892 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QDQFinalCleanupTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.648212918 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer Level2_RuleBasedTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.649106129 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QDQS8ToU8Transformer modified: 0 with status: OK
+2024-12-01 12:53:15.650818919 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QDQSelectorActionTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.651653251 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer GemmActivationFusion modified: 0 with status: OK
+2024-12-01 12:53:15.652556361 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulIntegerToFloatFusion modified: 0 with status: OK
+2024-12-01 12:53:15.653380442 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer DynamicQuantizeMatMulFusion modified: 0 with status: OK
+2024-12-01 12:53:15.654595129 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer ConvActivationFusion modified: 0 with status: OK
+2024-12-01 12:53:15.655456390 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer GeluFusion modified: 0 with status: OK
+2024-12-01 12:53:15.656363660 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer LayerNormFusion modified: 0 with status: OK
+2024-12-01 12:53:15.657259582 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer SimplifiedLayerNormFusion modified: 0 with status: OK
+2024-12-01 12:53:15.658065454 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer AttentionFusion modified: 0 with status: OK
+2024-12-01 12:53:15.658852027 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer EmbedLayerNormFusion modified: 0 with status: OK
+2024-12-01 12:53:15.660213995 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer GatherSliceToSplitFusion modified: 0 with status: OK
+2024-12-01 12:53:15.661072956 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer GatherToSliceFusion modified: 0 with status: OK
+2024-12-01 12:53:15.661947050 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatmulTransposeFusion modified: 0 with status: OK
+2024-12-01 12:53:15.662838290 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer BiasGeluFusion modified: 0 with status: OK
+2024-12-01 12:53:15.663662501 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer SkipLayerNormFusion modified: 0 with status: OK
+2024-12-01 12:53:15.664628414 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer FastGeluFusion modified: 0 with status: OK
+2024-12-01 12:53:15.665550368 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QuickGeluFusion modified: 0 with status: OK
+2024-12-01 12:53:15.666420868 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer BiasSoftmaxFusion modified: 0 with status: OK
+2024-12-01 12:53:15.667247342 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer BiasDropoutFusion modified: 0 with status: OK
+2024-12-01 12:53:15.668242722 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulScaleFusion modified: 0 with status: OK
+2024-12-01 12:53:15.669078712 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulActivationFusion modified: 0 with status: OK
+2024-12-01 12:53:15.670103997 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MatMulNBitsFusion modified: 0 with status: OK
+2024-12-01 12:53:15.670978386 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer QDQFinalCleanupTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.672077438 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer NchwcTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.675085519 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer NhwcTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.676274896 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer ConvAddActivationFusion modified: 0 with status: OK
+2024-12-01 12:53:15.679611414 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer RemoveDuplicateCastTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.679641274 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer CastFloat16Transformer modified: 0 with status: OK
+2024-12-01 12:53:15.679666792 [I:onnxruntime:, graph_transformer.cc:15 Apply] GraphTransformer MemcpyTransformer modified: 0 with status: OK
+2024-12-01 12:53:15.693395295 [I:onnxruntime:, allocation_planner.cc:2567 CreateGraphPartitioner] Use DeviceBasedPartition as default
+2024-12-01 12:53:16.564591552 [I:onnxruntime:, session_state_utils.cc:209 SaveInitializedTensors] Saving initialized tensors.
+2024-12-01 12:53:16.564897389 [I:onnxruntime:Default, bfc_arena.cc:347 AllocateRawInternal] Extending BFCArena for Cpu. bin_num:0 (requested) num_bytes: 32 (actual) rounded_bytes:256
+2024-12-01 12:53:16.564930165 [I:onnxruntime:Default, bfc_arena.cc:206 Extend] Extended allocation by 1048576 bytes.
+2024-12-01 12:53:16.564936754 [I:onnxruntime:Default, bfc_arena.cc:209 Extend] Total allocated bytes: 1048576
+2024-12-01 12:53:16.564943154 [I:onnxruntime:Default, bfc_arena.cc:212 Extend] Allocated memory at 0x56319f23c200 to 0x56319f33c200
+2024-12-01 12:53:16.565404614 [I:onnxruntime:Default, bfc_arena.cc:347 AllocateRawInternal] Extending BFCArena for Cpu. bin_num:0 (requested) num_bytes: 8 (actual) rounded_bytes:256
+2024-12-01 12:53:16.565448489 [I:onnxruntime:Default, bfc_arena.cc:206 Extend] Extended allocation by 2097152 bytes.
+2024-12-01 12:53:16.565454644 [I:onnxruntime:Default, bfc_arena.cc:209 Extend] Total allocated bytes: 3145728
+2024-12-01 12:53:16.565460572 [I:onnxruntime:Default, bfc_arena.cc:212 Extend] Allocated memory at 0x56319f33c280 to 0x56319f53c280
+2024-12-01 12:53:16.565830646 [I:onnxruntime:Default, bfc_arena.cc:347 AllocateRawInternal] Extending BFCArena for Cpu. bin_num:13 (requested) num_bytes: 2883584 (actual) rounded_bytes:2883584
+2024-12-01 12:53:16.565866074 [I:onnxruntime:Default, bfc_arena.cc:206 Extend] Extended allocation by 4194304 bytes.
+2024-12-01 12:53:16.565871570 [I:onnxruntime:Default, bfc_arena.cc:209 Extend] Total allocated bytes: 7340032
+2024-12-01 12:53:16.565877047 [I:onnxruntime:Default, bfc_arena.cc:212 Extend] Allocated memory at 0x56319f53c300 to 0x56319f93c300
+2024-12-01 12:53:16.569421665 [I:onnxruntime:Default, bfc_arena.cc:347 AllocateRawInternal] Extending BFCArena for Cpu. bin_num:12 (requested) num_bytes: 1769472 (actual) rounded_bytes:1769472
+2024-12-01 12:53:16.569464748 [I:onnxruntime:Default, bfc_arena.cc:206 Extend] Extended allocation by 8388608 bytes.
+2024-12-01 12:53:16.569470744 [I:onnxruntime:Default, bfc_arena.cc:209 Extend] Total allocated bytes: 15728640
+2024-12-01 12:53:16.569476381 [I:onnxruntime:Default, bfc_arena.cc:212 Extend] Allocated memory at 0x7f4f9c8fa040 to 0x7f4f9d0fa040
+2024-12-01 12:53:16.575086966 [I:onnxruntime:Default, bfc_arena.cc:347 AllocateRawInternal] Extending BFCArena for Cpu. bin_num:1 (requested) num_bytes: 768 (actual) rounded_bytes:768
+2024-12-01 12:53:16.575124144 [I:onnxruntime:Default, bfc_arena.cc:206 Extend] Extended allocation by 16777216 bytes.
+2024-12-01 12:53:16.575130427 [I:onnxruntime:Default, bfc_arena.cc:209 Extend] Total allocated bytes: 32505856
+2024-12-01 12:53:16.575136241 [I:onnxruntime:Default, bfc_arena.cc:212 Extend] Allocated memory at 0x7f4f96fff040 to 0x7f4f97fff040
+2024-12-01 12:53:16.586298294 [I:onnxruntime:Default, bfc_arena.cc:347 AllocateRawInternal] Extending BFCArena for Cpu. bin_num:1 (requested) num_bytes: 768 (actual) rounded_bytes:768
+2024-12-01 12:53:16.586334942 [I:onnxruntime:Default, bfc_arena.cc:206 Extend] Extended allocation by 33554432 bytes.
+2024-12-01 12:53:16.586341503 [I:onnxruntime:Default, bfc_arena.cc:209 Extend] Total allocated bytes: 66060288
+2024-12-01 12:53:16.586347297 [I:onnxruntime:Default, bfc_arena.cc:212 Extend] Allocated memory at 0x7f4f94ffe040 to 0x7f4f96ffe040
+2024-12-01 12:53:16.611000823 [I:onnxruntime:Default, bfc_arena.cc:347 AllocateRawInternal] Extending BFCArena for Cpu. bin_num:12 (requested) num_bytes: 1474560 (actual) rounded_bytes:1474560
+2024-12-01 12:53:16.611060348 [I:onnxruntime:Default, bfc_arena.cc:206 Extend] Extended allocation by 67108864 bytes.
+2024-12-01 12:53:16.611071635 [I:onnxruntime:Default, bfc_arena.cc:209 Extend] Total allocated bytes: 133169152
+2024-12-01 12:53:16.611078590 [I:onnxruntime:Default, bfc_arena.cc:212 Extend] Allocated memory at 0x7f4f90ffd040 to 0x7f4f94ffd040
+2024-12-01 12:53:16.654976083 [I:onnxruntime:, session_state_utils.cc:360 SaveInitializedTensors] Done saving initialized tensors
+2024-12-01 12:53:16.673123373 [I:onnxruntime:, inference_session.cc:2094 Initialize] Session successfully initialized.
+2024-12-01 12:53:16.738959356 [I:onnxruntime:Default, bfc_arena.cc:347 AllocateRawInternal] Extending BFCArena for Cpu. bin_num:11 (requested) num_bytes: 983040 (actual) rounded_bytes:983040
+2024-12-01 12:53:16.739048589 [I:onnxruntime:Default, bfc_arena.cc:206 Extend] Extended allocation by 134217728 bytes.
+2024-12-01 12:53:16.739058682 [I:onnxruntime:Default, bfc_arena.cc:209 Extend] Total allocated bytes: 267386880
+2024-12-01 12:53:16.739068170 [I:onnxruntime:Default, bfc_arena.cc:212 Extend] Allocated memory at 0x7f4f88ffc040 to 0x7f4f90ffc040
+use_gpu: False
+['CPUExecutionProvider']
+ort.version: 1.19.2
+input tokens len: 185
+model_outputs: [-0.0007628  -0.00032837 -0.00052376 ... -0.00069379 -0.00258761
+  0.00342752]
+model_outputs.shape: (44288,)
+consumed: 0.4928152561187744
