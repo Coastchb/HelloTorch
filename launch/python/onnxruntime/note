@@ -1,0 +1,9 @@
+1、
+（1）pip install onnxruntime-gpu之后，通过ort_sess.get_providers()显示只有CPUExecutionProvider
+（2）ort_sess = ort.InferenceSession('../models/coqui_vits.onnx', providers=['CUDAExecutionProvider'])提示：
+    Failed to load library libonnxruntime_providers_cuda.so with error: libcudnn.so.9: cannot open shared object file: No such file or directory
+ 解法：安装对应的cuDNN：https://developer.nvidia.com/cudnn-downloads?target_os=Linux&target_arch=x86_64&Distribution=Rocky&target_version=8&target_type=rpm_local  
+      然后设置环境变量LD_LIBRARY_PATH
+
+2、4 Memcpy nodes are added to the graph main_graph for CUDAExecutionProvider. It might have negative impact on performance (including unable to run CUDA graph). Set session_options.log_severity_level=1 to see the detail logs before this message.
+    解法：https://github.com/pythongosssss/ComfyUI-WD14-Tagger/issues/62
