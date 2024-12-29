@@ -139,7 +139,7 @@ void removeChars(std::string str, const std::string& charsToRemove, std::string&
 
 
 void tts(const int& input_number, std::map<std::string, int>& char2id, ov::CompiledModel* model,
-         const std::string& input_text, const std::string& output_wav_filename,
+         const std::string& input_text, const int& sid, const std::string& output_wav_filename,
          status_type& return_status) {
     try{
 
@@ -213,6 +213,12 @@ void tts(const int& input_number, std::map<std::string, int>& char2id, ov::Compi
             *x2 = s;
             x2 += 1;
         }
+
+        ov::Tensor input_tensor_3 = infer_request.get_input_tensor(3);
+        input_tensor_3.set_shape({1});
+        int64_t* x3 = input_tensor_3.data<int64_t>();
+        *x3 = sid;
+
         auto before_infer = static_cast<int>(time(0));
         std::cout << "[" << std::to_string(input_number) << "][2]in tts,before infer:" << std::to_string(before_infer) << std::endl;
         //infer_request.start_async();

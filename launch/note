@@ -49,7 +49,7 @@ https://blog.csdn.net/skybboy/article/details/105151142
   fatal error: brotli/decode.h: No such file or directory
   安装openssl和brotli：yum install openssl-devel brotli-devel
 
-9、curl访问httpserver：curl -o a.wav -s -w "%{http_code}" http://localhost:1234/get-content
+9、curl访问httpserver：curl -o a.wav -s -w "%{http_code}" 'http://localhost:1234/get-content?text="hello,world"&sid=1'
    python中类似： 
       import os
       status = os.popen('curl -o a.wav -s -w "%{http_code}" http://localhost:1234/get-content').readlines()[0]

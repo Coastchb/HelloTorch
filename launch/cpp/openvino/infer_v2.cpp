@@ -40,7 +40,7 @@ async_simple::coro::Lazy<void> tts_http_server(std::map<std::string, int>& char2
 
     status_type init_status = status_type::ok;
     std::vector<ov::CompiledModel> compiled_models;
-    for (int x = 0; x < 50; x++) {
+    for (int x = 0; x < 10; x++) {
         ov::CompiledModel compiled_model;
         load_model(model_path, device_type, init_status, compiled_model);
         compiled_models.push_back(compiled_model);
@@ -55,11 +55,29 @@ async_simple::coro::Lazy<void> tts_http_server(std::map<std::string, int>& char2
         auto cur_model = compiled_models[model_idx];
         model_idx += 1;
         std::string input = "Hello,world!";
+        int sid = 0;
         auto req_queris = req.get_queries();
+        /*
+        for (auto &[q, v] : req.get_queries()) {
+            std::cout << "q:" << q << ";v:" << v << std::endl;
+        }
+        std::cout << "url:" << std::string(req.get_url()) << std::endl;
+        std::cout << "full url:" << req.full_url() << std::endl;
+        std::cout << "get_body:" << req.get_body() << std::endl;
+        for (auto it = req_queris.begin(); it != req_queris.end(); ++it) {
+            std::cout << "key:" << std::string(it->first) << "; value:" << std::string(it->second) << std::endl;
+        }*/
 
         if (req_queris.contains("text")) {
             input = std::string(req.get_query_value("text"));
         }
+
+        if (req_queris.contains("sid")) {
+            std::cout << "std::string(req.get_query_value('sid')):" << std::string(req.get_query_value("sid")) << std::endl;
+            sid = std::stoi(std::string(req.get_query_value("sid")));
+        }
+
+        std::cout << "input text:" << input << "; sid:" << sid << std::endl;
 
         // in curl, query value cannot contains white space, use '%20' instead.
         replaceAll(input, "%20", " ");
@@ -80,15 +98,13 @@ async_simple::coro::Lazy<void> tts_http_server(std::map<std::string, int>& char2
             co_return;
         }
         
-
-        
         std::string wav_filename = std::to_string(request_time).append("_").append(std::to_string(input_number)).append(".wav");
 
         std::cout << "[" << std::to_string(input_number) << "]input_number:" << std::to_string(input_number) << std::endl;
         //std::string wav_filename = "../output.wav";
         status_type tts_ret_status;
         auto before_tts_time = static_cast<int>(time(0));
-        tts(input_number, char2id, &cur_model, input, wav_filename, tts_ret_status);
+        tts(input_number, char2id, &cur_model, input, sid, wav_filename, tts_ret_status);
         //sleep(5);
         auto after_tts_time = static_cast<int>(time(0));
         std::cout << "[" << std::to_string(input_number) << "]tts time:" << std::to_string(after_tts_time - before_tts_time)
